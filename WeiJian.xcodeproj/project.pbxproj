@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D3E660116D0D1CF00E35599 /* home_timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660016D0D1CF00E35599 /* home_timeline.m */; };
+		4D3E660416D0D32700E35599 /* Home_timelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660316D0D32700E35599 /* Home_timelineViewCell.m */; };
 		4DD2F21116BF720000C3A791 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21016BF720000C3A791 /* UIKit.framework */; };
 		4DD2F21316BF720000C3A791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21216BF720000C3A791 /* Foundation.framework */; };
 		4DD2F21516BF720000C3A791 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21416BF720000C3A791 /* CoreGraphics.framework */; };
@@ -21,6 +23,16 @@
 		4DD2F23116BF720000C3A791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21216BF720000C3A791 /* Foundation.framework */; };
 		4DD2F23916BF720100C3A791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2F23716BF720100C3A791 /* InfoPlist.strings */; };
 		4DD2F23C16BF720100C3A791 /* WeiJianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F23B16BF720100C3A791 /* WeiJianTests.m */; };
+		4DD2F24716BF72B400C3A791 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F24616BF72B400C3A791 /* MainViewController.m */; };
+		4DD2F24A16C0C92C00C3A791 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F24916C0C92C00C3A791 /* PublicViewController.m */; };
+		4DD2F24D16C0C95F00C3A791 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F24C16C0C95F00C3A791 /* CameraViewController.m */; };
+		4DD2F25016C0C9B700C3A791 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F24F16C0C9B700C3A791 /* MessageViewController.m */; };
+		4DD2F25316C0CA4700C3A791 /* MoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F25216C0CA4700C3A791 /* MoreInfoViewController.m */; };
+		4DD2F29916C1042B00C3A791 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F28F16C1042B00C3A791 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4DD2F29A16C1042B00C3A791 /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2F29116C1042B00C3A791 /* SinaWeibo.bundle */; };
+		4DD2F29B16C1042B00C3A791 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F29316C1042B00C3A791 /* SinaWeibo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4DD2F29C16C1042B00C3A791 /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F29516C1042B00C3A791 /* SinaWeiboAuthorizeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4DD2F29D16C1042B00C3A791 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2F29816C1042B00C3A791 /* SinaWeiboRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D3E65FF16D0D1CF00E35599 /* home_timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = home_timeline.h; sourceTree = "<group>"; };
+		4D3E660016D0D1CF00E35599 /* home_timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = home_timeline.m; sourceTree = "<group>"; };
+		4D3E660216D0D32700E35599 /* Home_timelineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_timelineViewCell.h; sourceTree = "<group>"; };
+		4D3E660316D0D32700E35599 /* Home_timelineViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home_timelineViewCell.m; sourceTree = "<group>"; };
 		4DD2F20D16BF720000C3A791 /* WeiJian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiJian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD2F21016BF720000C3A791 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DD2F21216BF720000C3A791 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +69,26 @@
 		4DD2F23816BF720100C3A791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4DD2F23A16BF720100C3A791 /* WeiJianTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiJianTests.h; sourceTree = "<group>"; };
 		4DD2F23B16BF720100C3A791 /* WeiJianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiJianTests.m; sourceTree = "<group>"; };
+		4DD2F24516BF72B400C3A791 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4DD2F24616BF72B400C3A791 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4DD2F24816C0C92C00C3A791 /* PublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicViewController.h; sourceTree = "<group>"; };
+		4DD2F24916C0C92C00C3A791 /* PublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicViewController.m; sourceTree = "<group>"; };
+		4DD2F24B16C0C95F00C3A791 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = ../WeiJian/CameraViewController.h; sourceTree = "<group>"; };
+		4DD2F24C16C0C95F00C3A791 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		4DD2F24E16C0C9B700C3A791 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		4DD2F24F16C0C9B700C3A791 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		4DD2F25116C0CA4700C3A791 /* MoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreInfoViewController.h; sourceTree = "<group>"; };
+		4DD2F25216C0CA4700C3A791 /* MoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreInfoViewController.m; sourceTree = "<group>"; };
+		4DD2F28E16C1042B00C3A791 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		4DD2F28F16C1042B00C3A791 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		4DD2F29116C1042B00C3A791 /* SinaWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SinaWeibo.bundle; sourceTree = "<group>"; };
+		4DD2F29216C1042B00C3A791 /* SinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeibo.h; sourceTree = "<group>"; };
+		4DD2F29316C1042B00C3A791 /* SinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeibo.m; sourceTree = "<group>"; };
+		4DD2F29416C1042B00C3A791 /* SinaWeiboAuthorizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthorizeView.h; sourceTree = "<group>"; };
+		4DD2F29516C1042B00C3A791 /* SinaWeiboAuthorizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthorizeView.m; sourceTree = "<group>"; };
+		4DD2F29616C1042B00C3A791 /* SinaWeiboConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboConstants.h; sourceTree = "<group>"; };
+		4DD2F29716C1042B00C3A791 /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
+		4DD2F29816C1042B00C3A791 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +115,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D3E65FB16D0D17200E35599 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DD2F21F16BF720000C3A791 /* AppDelegate.h */,
+				4DD2F22016BF720000C3A791 /* AppDelegate.m */,
+				4DD2F24516BF72B400C3A791 /* MainViewController.h */,
+				4DD2F24616BF72B400C3A791 /* MainViewController.m */,
+				4DD2F24816C0C92C00C3A791 /* PublicViewController.h */,
+				4DD2F24916C0C92C00C3A791 /* PublicViewController.m */,
+				4DD2F24C16C0C95F00C3A791 /* CameraViewController.m */,
+				4DD2F24E16C0C9B700C3A791 /* MessageViewController.h */,
+				4DD2F24F16C0C9B700C3A791 /* MessageViewController.m */,
+				4DD2F25116C0CA4700C3A791 /* MoreInfoViewController.h */,
+				4DD2F25216C0CA4700C3A791 /* MoreInfoViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4D3E65FC16D0D19000E35599 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D3E65FF16D0D1CF00E35599 /* home_timeline.h */,
+				4D3E660016D0D1CF00E35599 /* home_timeline.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4D3E65FE16D0D1A700E35599 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D3E660216D0D32700E35599 /* Home_timelineViewCell.h */,
+				4D3E660316D0D32700E35599 /* Home_timelineViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4DD2F20416BF720000C3A791 = {
 			isa = PBXGroup;
 			children = (
+				4DD2F28D16C1042B00C3A791 /* JSONKit */,
+				4DD2F29016C1042B00C3A791 /* SinaWeibo */,
 				4DD2F21616BF720000C3A791 /* WeiJian */,
 				4DD2F23416BF720000C3A791 /* WeiJianTests */,
 				4DD2F20F16BF720000C3A791 /* Frameworks */,
@@ -112,8 +186,9 @@
 		4DD2F21616BF720000C3A791 /* WeiJian */ = {
 			isa = PBXGroup;
 			children = (
-				4DD2F21F16BF720000C3A791 /* AppDelegate.h */,
-				4DD2F22016BF720000C3A791 /* AppDelegate.m */,
+				4D3E65FE16D0D1A700E35599 /* Views */,
+				4D3E65FC16D0D19000E35599 /* Models */,
+				4D3E65FB16D0D17200E35599 /* ViewControllers */,
 				4DD2F21716BF720000C3A791 /* Supporting Files */,
 			);
 			path = WeiJian;
@@ -150,6 +225,31 @@
 				4DD2F23716BF720100C3A791 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DD2F28D16C1042B00C3A791 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				4DD2F28E16C1042B00C3A791 /* JSONKit.h */,
+				4DD2F28F16C1042B00C3A791 /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		4DD2F29016C1042B00C3A791 /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				4DD2F29116C1042B00C3A791 /* SinaWeibo.bundle */,
+				4DD2F24B16C0C95F00C3A791 /* CameraViewController.h */,
+				4DD2F29216C1042B00C3A791 /* SinaWeibo.h */,
+				4DD2F29316C1042B00C3A791 /* SinaWeibo.m */,
+				4DD2F29416C1042B00C3A791 /* SinaWeiboAuthorizeView.h */,
+				4DD2F29516C1042B00C3A791 /* SinaWeiboAuthorizeView.m */,
+				4DD2F29616C1042B00C3A791 /* SinaWeiboConstants.h */,
+				4DD2F29716C1042B00C3A791 /* SinaWeiboRequest.h */,
+				4DD2F29816C1042B00C3A791 /* SinaWeiboRequest.m */,
+			);
+			path = SinaWeibo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +327,7 @@
 				4DD2F22316BF720000C3A791 /* Default.png in Resources */,
 				4DD2F22516BF720000C3A791 /* Default@2x.png in Resources */,
 				4DD2F22716BF720000C3A791 /* Default-568h@2x.png in Resources */,
+				4DD2F29A16C1042B00C3A791 /* SinaWeibo.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +364,17 @@
 			files = (
 				4DD2F21D16BF720000C3A791 /* main.m in Sources */,
 				4DD2F22116BF720000C3A791 /* AppDelegate.m in Sources */,
+				4DD2F24716BF72B400C3A791 /* MainViewController.m in Sources */,
+				4DD2F24A16C0C92C00C3A791 /* PublicViewController.m in Sources */,
+				4DD2F24D16C0C95F00C3A791 /* CameraViewController.m in Sources */,
+				4DD2F25016C0C9B700C3A791 /* MessageViewController.m in Sources */,
+				4DD2F25316C0CA4700C3A791 /* MoreInfoViewController.m in Sources */,
+				4DD2F29916C1042B00C3A791 /* JSONKit.m in Sources */,
+				4DD2F29B16C1042B00C3A791 /* SinaWeibo.m in Sources */,
+				4DD2F29C16C1042B00C3A791 /* SinaWeiboAuthorizeView.m in Sources */,
+				4DD2F29D16C1042B00C3A791 /* SinaWeiboRequest.m in Sources */,
+				4D3E660116D0D1CF00E35599 /* home_timeline.m in Sources */,
+				4D3E660416D0D32700E35599 /* Home_timelineViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +477,7 @@
 		4DD2F24016BF720100C3A791 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeiJian/WeiJian-Prefix.pch";
 				INFOPLIST_FILE = "WeiJian/WeiJian-Info.plist";
@@ -376,6 +489,7 @@
 		4DD2F24116BF720100C3A791 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeiJian/WeiJian-Prefix.pch";
 				INFOPLIST_FILE = "WeiJian/WeiJian-Info.plist";
@@ -437,6 +551,7 @@
 				4DD2F24116BF720100C3A791 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DD2F24216BF720100C3A791 /* Build configuration list for PBXNativeTarget "WeiJianTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +560,7 @@
 				4DD2F24416BF720100C3A791 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
