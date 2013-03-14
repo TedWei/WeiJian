@@ -1,14 +1,13 @@
 //
-//  home_timeline.h
+//  Geo.h
 //  WeiJian
 //
-//  Created by 卫 强 on 17/2/13.
+//  Created by Ted on 13/3/13.
 //  Copyright (c) 2013 卫 强. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface home_timeline : NSObject
-{
-}
+@interface Geo : NSObject
+
 @end

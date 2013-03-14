@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D3E660116D0D1CF00E35599 /* home_timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660016D0D1CF00E35599 /* home_timeline.m */; };
+		4D35565E16F0C2C6002AA388 /* SingleWeiBo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35565D16F0C2C6002AA388 /* SingleWeiBo.m */; };
+		4D35566116F0C7E3002AA388 /* Geo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35566016F0C7E3002AA388 /* Geo.m */; };
+		4D35566416F0C7FC002AA388 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35566316F0C7FC002AA388 /* User.m */; };
+		4D35566716F0C825002AA388 /* Retweeted_Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35566616F0C825002AA388 /* Retweeted_Status.m */; };
+		4D35566A16F0DB03002AA388 /* myImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D35566916F0DB03002AA388 /* myImage.png */; };
+		4D3E660116D0D1CF00E35599 /* Home_timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660016D0D1CF00E35599 /* Home_timeline.m */; };
 		4D3E660416D0D32700E35599 /* Home_timelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660316D0D32700E35599 /* Home_timelineViewCell.m */; };
 		4DD2F21116BF720000C3A791 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21016BF720000C3A791 /* UIKit.framework */; };
 		4DD2F21316BF720000C3A791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21216BF720000C3A791 /* Foundation.framework */; };
@@ -46,8 +51,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D3E65FF16D0D1CF00E35599 /* home_timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = home_timeline.h; sourceTree = "<group>"; };
-		4D3E660016D0D1CF00E35599 /* home_timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = home_timeline.m; sourceTree = "<group>"; };
+		4D35565C16F0C2C6002AA388 /* SingleWeiBo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleWeiBo.h; sourceTree = "<group>"; };
+		4D35565D16F0C2C6002AA388 /* SingleWeiBo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleWeiBo.m; sourceTree = "<group>"; };
+		4D35565F16F0C7E3002AA388 /* Geo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geo.h; sourceTree = "<group>"; };
+		4D35566016F0C7E3002AA388 /* Geo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geo.m; sourceTree = "<group>"; };
+		4D35566216F0C7FC002AA388 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4D35566316F0C7FC002AA388 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4D35566516F0C825002AA388 /* Retweeted_Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retweeted_Status.h; sourceTree = "<group>"; };
+		4D35566616F0C825002AA388 /* Retweeted_Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retweeted_Status.m; sourceTree = "<group>"; };
+		4D35566916F0DB03002AA388 /* myImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myImage.png; path = ../../WeiboNai/ScreenShots/myImage.png; sourceTree = "<group>"; };
+		4D3E65FF16D0D1CF00E35599 /* Home_timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_timeline.h; sourceTree = "<group>"; };
+		4D3E660016D0D1CF00E35599 /* Home_timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home_timeline.m; sourceTree = "<group>"; };
 		4D3E660216D0D32700E35599 /* Home_timelineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_timelineViewCell.h; sourceTree = "<group>"; };
 		4D3E660316D0D32700E35599 /* Home_timelineViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home_timelineViewCell.m; sourceTree = "<group>"; };
 		4DD2F20D16BF720000C3A791 /* WeiJian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiJian.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,11 +129,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D35566816F0DA9A002AA388 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4D35566916F0DB03002AA388 /* myImage.png */,
+			);
+			name = Resource;
+			path = SinaWeibo;
+			sourceTree = "<group>";
+		};
 		4D3E65FB16D0D17200E35599 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4DD2F21F16BF720000C3A791 /* AppDelegate.h */,
-				4DD2F22016BF720000C3A791 /* AppDelegate.m */,
 				4DD2F24516BF72B400C3A791 /* MainViewController.h */,
 				4DD2F24616BF72B400C3A791 /* MainViewController.m */,
 				4DD2F24816C0C92C00C3A791 /* PublicViewController.h */,
@@ -136,8 +157,16 @@
 		4D3E65FC16D0D19000E35599 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D3E65FF16D0D1CF00E35599 /* home_timeline.h */,
-				4D3E660016D0D1CF00E35599 /* home_timeline.m */,
+				4D3E65FF16D0D1CF00E35599 /* Home_timeline.h */,
+				4D3E660016D0D1CF00E35599 /* Home_timeline.m */,
+				4D35565C16F0C2C6002AA388 /* SingleWeiBo.h */,
+				4D35565D16F0C2C6002AA388 /* SingleWeiBo.m */,
+				4D35565F16F0C7E3002AA388 /* Geo.h */,
+				4D35566016F0C7E3002AA388 /* Geo.m */,
+				4D35566216F0C7FC002AA388 /* User.h */,
+				4D35566316F0C7FC002AA388 /* User.m */,
+				4D35566516F0C825002AA388 /* Retweeted_Status.h */,
+				4D35566616F0C825002AA388 /* Retweeted_Status.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -156,6 +185,7 @@
 			children = (
 				4DD2F28D16C1042B00C3A791 /* JSONKit */,
 				4DD2F29016C1042B00C3A791 /* SinaWeibo */,
+				4D35566816F0DA9A002AA388 /* Resource */,
 				4DD2F21616BF720000C3A791 /* WeiJian */,
 				4DD2F23416BF720000C3A791 /* WeiJianTests */,
 				4DD2F20F16BF720000C3A791 /* Frameworks */,
@@ -186,6 +216,8 @@
 		4DD2F21616BF720000C3A791 /* WeiJian */ = {
 			isa = PBXGroup;
 			children = (
+				4DD2F21F16BF720000C3A791 /* AppDelegate.h */,
+				4DD2F22016BF720000C3A791 /* AppDelegate.m */,
 				4D3E65FE16D0D1A700E35599 /* Views */,
 				4D3E65FC16D0D19000E35599 /* Models */,
 				4D3E65FB16D0D17200E35599 /* ViewControllers */,
@@ -328,6 +360,7 @@
 				4DD2F22516BF720000C3A791 /* Default@2x.png in Resources */,
 				4DD2F22716BF720000C3A791 /* Default-568h@2x.png in Resources */,
 				4DD2F29A16C1042B00C3A791 /* SinaWeibo.bundle in Resources */,
+				4D35566A16F0DB03002AA388 /* myImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +406,12 @@
 				4DD2F29B16C1042B00C3A791 /* SinaWeibo.m in Sources */,
 				4DD2F29C16C1042B00C3A791 /* SinaWeiboAuthorizeView.m in Sources */,
 				4DD2F29D16C1042B00C3A791 /* SinaWeiboRequest.m in Sources */,
-				4D3E660116D0D1CF00E35599 /* home_timeline.m in Sources */,
+				4D3E660116D0D1CF00E35599 /* Home_timeline.m in Sources */,
 				4D3E660416D0D32700E35599 /* Home_timelineViewCell.m in Sources */,
+				4D35565E16F0C2C6002AA388 /* SingleWeiBo.m in Sources */,
+				4D35566116F0C7E3002AA388 /* Geo.m in Sources */,
+				4D35566416F0C7FC002AA388 /* User.m in Sources */,
+				4D35566716F0C825002AA388 /* Retweeted_Status.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

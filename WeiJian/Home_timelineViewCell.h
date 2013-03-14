@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface Home_timelineViewCell : UITableViewCell
+{
+    UILabel *screen_nameLabel;
+    UIImageView *photo_image;
+    UILabel *text_Label;
+}
 
 
 @end

@@ -4,6 +4,9 @@
 
 #import <Availability.h>
 
+#define SELECTED_VIEW_CONTROLLER_TAG 98456345
+#define NOTIFICATION_IMAGE_VIEW_TAG 98456346
+
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif

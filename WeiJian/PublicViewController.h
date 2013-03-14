@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PublicViewController : UIViewController
+@interface PublicViewController : UITableViewController
 
 @end

@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "SinaWeibo.h"
-#import "SinaWeiboRequest.h"    
+#import "SinaWeiboRequest.h" 
 
-@interface MainViewController : UITableViewController<SinaWeiboDelegate,SinaWeiboRequestDelegate>
+@interface MainViewController : UITableViewController<SinaWeiboDelegate,SinaWeiboRequestDelegate,UITableViewDataSource,UITableViewDelegate>
 
 {
     NSDictionary *userInfo;

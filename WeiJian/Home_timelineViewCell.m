@@ -15,6 +15,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        screen_nameLabel=[[UILabel alloc]initWithFrame:CGRectZero];
+        [[self contentView] addSubview:screen_nameLabel];
+        
+        text_Label=[[UILabel alloc]initWithFrame:CGRectZero];
+        [[self contentView] addSubview:text_Label];
+        
+        photo_image=[[UIImageView  alloc]initWithFrame:CGRectZero ];
+        [[self contentView]addSubview:photo_image];
     }
     return self;
 }
@@ -24,6 +32,29 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    float inset = 5.0;
+    
+    CGRect bounds=[[self contentView]bounds];
+    
+    float h=bounds.size.height;
+ //   float w=bounds.size.width;
+    
+    float screen_nameLableWidth = 100;
+    
+    CGRect photo_imageFrame= CGRectMake(inset, inset, 40, 40);
+    [photo_image  setFrame:photo_imageFrame ];
+    
+    CGRect screen_nameLableFrame=CGRectMake(photo_imageFrame.size.width+photo_imageFrame.origin.x+inset, inset, screen_nameLableWidth, 20);
+    [screen_nameLabel setFrame:screen_nameLableFrame];
+    
+    CGRect text_LabelFrame=CGRectMake(photo_imageFrame.size.width+photo_imageFrame.origin.x+inset,inset+screen_nameLableFrame.size.height+inset, 450, h-inset*3-screen_nameLableFrame.size.height);
+    [text_Label setFrame:text_LabelFrame];
 }
 
 @end

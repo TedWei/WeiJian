@@ -13,16 +13,22 @@
 
 @synthesize sinaweibo;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor blackColor];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     self.mainViewController=[[MainViewController alloc ]init];
     self.publicViewController=[[PublicViewController alloc]init];
     self.cameraViewController=[[CameraViewController alloc]init];
     self.messageViewController=[[MessageViewController alloc]init];
     self.moreInfoViewController=[[MoreInfoViewController alloc]init];
+    
+    self.mainViewController.tabBarItem.image=[UIImage imageNamed:@"mentionsIcon"];
+    
     
     UINavigationController *nav1=[[UINavigationController alloc] initWithRootViewController:self.mainViewController];
     nav1.navigationBar.tintColor=[UIColor blackColor];
@@ -32,6 +38,9 @@
     tabbarController.viewControllers=[NSArray arrayWithObjects:nav1,self.publicViewController,self.cameraViewController,self.messageViewController,self.moreInfoViewController,  nil];
     self.window.rootViewController=tabbarController;
     [self.window makeKeyAndVisible];
+    
+    NSLog(@"123");
+    
     
     sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:self.mainViewController];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

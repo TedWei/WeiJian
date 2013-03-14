@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "SinaWeibo.h"
+#import "Home_timelineViewCell.h"
 
 @interface MainViewController ()
 @property (nonatomic) int count;
@@ -49,6 +50,40 @@
 
 {   
     [super viewDidLoad];
+   // self.view.backgroundColor=[UIColor redColor];
+    
+    //set tableview's background ,footerView and headView
+    
+    self.tableView.backgroundColor=[UIColor clearColor];
+    UIImageView *tableBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"myImage"]];
+    
+    [tableBackgroundView setFrame: self.view.frame];
+    
+    
+    [self.tableView setBackgroundView:tableBackgroundView];
+    
+    
+    
+    UIView *tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    [tableHeaderView setBackgroundColor:[UIColor blueColor]];
+    UIView *tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    [tableFooterView setBackgroundColor:[UIColor blueColor]];
+    UILabel *headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
+    headerLabel.text = @"Header view"; headerLabel.textColor = [UIColor whiteColor]; headerLabel.font = [UIFont boldSystemFontOfSize:22]; headerLabel.backgroundColor = [UIColor clearColor];
+    UILabel *footerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
+    footerLabel.text = @"Footer view"; footerLabel.textColor = [UIColor whiteColor]; footerLabel.font = [UIFont boldSystemFontOfSize:22]; footerLabel.backgroundColor = [UIColor clearColor];
+    [tableHeaderView addSubview:headerLabel]; [tableFooterView addSubview:footerLabel];
+    [self.tableView setTableHeaderView:tableHeaderView]; [self.tableView setTableFooterView:tableFooterView];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     self.countArr = [[NSMutableArray alloc] initWithCapacity:16];
@@ -60,13 +95,28 @@
     self.refreshControl = refresh;
     
     
+    
+   
+    
+    
+    
     UIBarButtonItem *login_outItem = [[UIBarButtonItem alloc] initWithTitle:@"绑定" style:UIBarButtonItemStyleBordered target:self action:@selector(login_out)];
     
     self.navigationItem.leftBarButtonItem=login_outItem;
     
     [self resetNavItemTitleAndLeftBarButtonItemTitle];
+    
+    UIBarButtonItem *post_Item = [[UIBarButtonItem  alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(post_button_pressend) ];
+    
+    self.navigationItem.rightBarButtonItem=post_Item;
+    
 
 
+}
+
+
+-(void)post_button_pressend{
+    
 }
 
 
@@ -100,9 +150,9 @@
     self.navigationItem.rightBarButtonItem.enabled=authValid;
     if (authValid)
     {
-        NSString *title=[userInfo objectForKey:@"screen_name"];
-        NSLog(@"userInfo is %@",title);
-        self.navigationItem.title=title;
+        NSString *screen_name=[userInfo objectForKey:@"screen_name"];
+        NSLog(@"userInfo is %@",screen_name);
+        self.navigationItem.title=screen_name;
 
         self.navigationItem.leftBarButtonItem.title=@"解绑";
         
@@ -142,7 +192,6 @@
     [self.countArr addObject:[NSString stringWithFormat:@"%@",[[statuses objectAtIndex:self.countArr.count] objectForKey:@"text"]]];
     }
     
-    
     [self.refreshControl endRefreshing];
     [self.tableView reloadData];
 }
@@ -169,16 +218,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"home_timelineViewCell";
+    Home_timelineViewCell *cell = (Home_timelineViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[Home_timelineViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
     
-    cell.textLabel.text = [self.countArr objectAtIndex:indexPath.row];
+    cell.textLabel.text  = [self.countArr objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:17];
     
     return cell;

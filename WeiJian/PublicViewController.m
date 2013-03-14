@@ -10,10 +10,9 @@
 
 @implementation PublicViewController
 
--(void)loadView
+-(void)viewDidLoad
 {
-    UIView *view=[[UIView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
-    view.backgroundColor=[UIColor whiteColor];
-    
+    [super viewDidLoad];
 }
+
 @end
