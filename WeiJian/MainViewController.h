@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SinaWeibo.h"
-#import "SinaWeiboRequest.h" 
+#import "SinaWeiboRequest.h"
+#import "SingleWeiBo.h"
 
 @interface MainViewController : UITableViewController<SinaWeiboDelegate,SinaWeiboRequestDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -17,6 +18,8 @@
     NSMutableArray *statuses;
     NSString *postStatusText;
     NSString *postImageStatusText;
+    
+ 
 }
 
 @end

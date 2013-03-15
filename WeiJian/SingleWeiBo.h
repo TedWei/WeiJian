@@ -9,30 +9,43 @@
 #import <Foundation/Foundation.h>
 
 @interface SingleWeiBo : NSObject
-{
-    NSString *created_at;
-    NSInteger id;
-    NSInteger mid;
-    NSString *idstr;
-    NSString *text;
-    NSString *source;
-    BOOL favorited;
-    BOOL truncated;
-    NSString *thumbnail_pic;
-    NSString *bmiddle_pic;
-    NSString *original_pic;
-    NSInteger reposts_count;
-    NSInteger comments_count;
-    NSInteger attitudes_count;
-    
-}
+  
 
-//-(id)initWithCreated_at:(NSString *)created_at
-//                     Id:(NSInteger *)id
-//                    Mid:(NSInteger *)mid
-//                  Idstr:(NSString *)idstr
-//                   Text:(NSString *)text
-//                 Source:(NSString *)source;
+
+
+@property (nonatomic,strong) NSString *created_at;
+@property (nonatomic) NSInteger id;
+@property (nonatomic) NSInteger mid;
+@property (nonatomic,strong) NSString *idstr;
+@property (nonatomic,strong) NSString *text;
+@property (nonatomic,strong) NSString *source;
+@property BOOL favorited;
+@property BOOL truncated;
+@property (nonatomic,strong) UIImage *thumbnail_pic;
+@property (nonatomic,strong) UIImage *bmiddle_pic;
+@property (nonatomic,strong) UIImage *original_pic;
+@property (nonatomic) NSInteger reposts_count;
+@property (nonatomic) NSInteger comments_count;
+@property (nonatomic) NSInteger attitudes_count;
+
+
+
+
+-(id)initWithCreated_at:(NSString *)created_at
+                     Id:(NSInteger )id
+                    Mid:(NSInteger )mid
+                  Idstr:(NSString *)idstr
+                   Text:(NSString *)text
+                 Source:(NSString *)source
+              Favorited:(BOOL )favorited
+              Truncated:(BOOL )truncated
+          Thumbnail_pic:(UIImage *)thumbnail_pic
+            Bmiddle_pic:(UIImage *)bmiddle_pic
+           Original_pic:(UIImage *)original_pic
+          Reposts_count:(NSInteger )reposts_count
+         Comments_count:(NSInteger )comments_count
+        Attitudes_count:(NSInteger )attitudes_count;
+
 
 
 @end

@@ -10,6 +10,9 @@
 #import "AppDelegate.h"
 #import "SinaWeibo.h"
 #import "Home_timelineViewCell.h"
+#import "Home_timeline.h"
+#import "SingleWeiBo.h"
+
 
 @interface MainViewController ()
 @property (nonatomic) int count;
@@ -54,29 +57,29 @@
     
     //set tableview's background ,footerView and headView
     
-    self.tableView.backgroundColor=[UIColor clearColor];
-    UIImageView *tableBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"myImage"]];
-    
-    [tableBackgroundView setFrame: self.view.frame];
-    
-    
-    [self.tableView setBackgroundView:tableBackgroundView];
-    
-    
-    
-    UIView *tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-    [tableHeaderView setBackgroundColor:[UIColor blueColor]];
-    UIView *tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-    [tableFooterView setBackgroundColor:[UIColor blueColor]];
-    UILabel *headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
-    headerLabel.text = @"Header view"; headerLabel.textColor = [UIColor whiteColor]; headerLabel.font = [UIFont boldSystemFontOfSize:22]; headerLabel.backgroundColor = [UIColor clearColor];
-    UILabel *footerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
-    footerLabel.text = @"Footer view"; footerLabel.textColor = [UIColor whiteColor]; footerLabel.font = [UIFont boldSystemFontOfSize:22]; footerLabel.backgroundColor = [UIColor clearColor];
-    [tableHeaderView addSubview:headerLabel]; [tableFooterView addSubview:footerLabel];
-    [self.tableView setTableHeaderView:tableHeaderView]; [self.tableView setTableFooterView:tableFooterView];
-    
-    
-    
+//    self.tableView.backgroundColor=[UIColor clearColor];
+//    UIImageView *tableBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"myImage"]];
+//    
+//    [tableBackgroundView setFrame: self.view.frame];
+//    
+//    
+//    [self.tableView setBackgroundView:tableBackgroundView];
+//    
+//    
+//    
+//    UIView *tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+//    [tableHeaderView setBackgroundColor:[UIColor blueColor]];
+//    UIView *tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+//    [tableFooterView setBackgroundColor:[UIColor blueColor]];
+//    UILabel *headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
+//    headerLabel.text = @"Header view"; headerLabel.textColor = [UIColor whiteColor]; headerLabel.font = [UIFont boldSystemFontOfSize:22]; headerLabel.backgroundColor = [UIColor clearColor];
+//    UILabel *footerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
+//    footerLabel.text = @"Footer view"; footerLabel.textColor = [UIColor whiteColor]; footerLabel.font = [UIFont boldSystemFontOfSize:22]; footerLabel.backgroundColor = [UIColor clearColor];
+//    [tableHeaderView addSubview:headerLabel]; [tableFooterView addSubview:footerLabel];
+//    [self.tableView setTableHeaderView:tableHeaderView]; [self.tableView setTableFooterView:tableFooterView];
+//    
+//    
+//    
     
     
     
@@ -147,11 +150,12 @@
     SinaWeibo *sinaweibo = [self sinaweibo];
     BOOL authValid = sinaweibo.isAuthValid;
     self.refreshControl.enabled=authValid;
+    NSString *screen_name=[userInfo objectForKey:@"name"];
+    NSLog(@"userInfo is %@",screen_name);
     self.navigationItem.rightBarButtonItem.enabled=authValid;
     if (authValid)
     {
-        NSString *screen_name=[userInfo objectForKey:@"screen_name"];
-        NSLog(@"userInfo is %@",screen_name);
+       
         self.navigationItem.title=screen_name;
 
         self.navigationItem.leftBarButtonItem.title=@"解绑";
@@ -184,17 +188,37 @@
                        params:[NSMutableDictionary dictionaryWithObject:@"50" forKey:@"count"]
                    httpMethod:@"GET"
                      delegate:self];
-       
     
-    if (statuses.count > 0)
-    {
+  //  Home_timeline *home_timeline=[[Home_timeline alloc]init];
+    
+    
+  //  [home_timeline addWeiBo];
+    
+  //  SingleWeiBo *singleWeiBo;
+    
+    NSLog(@"%@",statuses);
+    
+    
+    if (statuses.count >0) {
+        
      
-    [self.countArr addObject:[NSString stringWithFormat:@"%@",[[statuses objectAtIndex:self.countArr.count] objectForKey:@"text"]]];
+    [self.countArr addObject:[NSString stringWithFormat:@"%@",[[statuses objectAtIndex:0] objectForKey:@"text"]]];
+        
+//       singleWeiBo.created_at=[[statuses objectAtIndex:0]objectForKey:@"created_at"];
+//    
+//        home_timeline.addWeiBo.created_at=[[statuses objectAtIndex:0]objectForKey:@"created_at"];
+//        home_timeline.addWeiBo.text=[[statuses objectAtIndex:0]objectForKey:@"text"];
+//        [self.countArr addObject:home_timeline];
     }
+            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    
     
     [self.refreshControl endRefreshing];
     [self.tableView reloadData];
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    
 
 
 -(void)refreshView:(UIRefreshControl *)refresh
@@ -213,7 +237,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.countArr.count;
+    return [[[Home_timeline defaultHome_timeline]allWeiBo]count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -227,15 +251,26 @@
     
     // Configure the cell...
     
-    cell.textLabel.text  = [self.countArr objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont systemFontOfSize:17];
+   // SingleWeiBo *singleWeiBo=[[[Home_timeline defaultHome_timeline]allWeiBo]objectAtIndex:indexPath.row];
     
+   // cell.textLabel.text  = [self.countArr objectAtIndex:indexPath.row];
+//    cell.text_Label.text=[self.countArr objectAtIndex:(self.countArr.count-indexPath.row)];
+   
+    cell.text_Label.text=[self.countArr objectAtIndex:0];
+    
+     NSLog(@"text is %@",cell.text_Label.text);
+    cell.textLabel.font = [UIFont systemFontOfSize:17];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.refreshControl beginRefreshing];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
 }
 
 - (void)viewDidUnload
@@ -258,6 +293,7 @@
     [self storeAuthData];
     
 }
+   
 
 - (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
 {
@@ -356,7 +392,7 @@
         
         
     }
-     [self resetNavItemTitleAndLeftBarButtonItemTitle];
+   //  [self resetNavItemTitleAndLeftBarButtonItemTitle];
 }
 
 @end

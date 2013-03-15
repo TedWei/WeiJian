@@ -16,6 +16,6 @@
 
 + (Home_timeline *)defaultHome_timeline;
 -(NSArray *)allWeiBo;
--(SingleWeiBo *)getWeiBo;
+-(SingleWeiBo *)addWeiBo;
 
 @end

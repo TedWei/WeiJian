@@ -7,6 +7,7 @@
 //
 
 #import "Home_timeline.h"
+#import "SingleWeiBo.h"
 
 static Home_timeline *defaultHome_timeline = nil;
 
@@ -44,12 +45,13 @@ static Home_timeline *defaultHome_timeline = nil;
     return  allWeiBo;
 }
 
--(SingleWeiBo *)getWeiBo
+-(SingleWeiBo *)addWeiBo
 {
-   // SingleWeiBo *singWeiBo=[[SingleWeiBo alloc]init];
-  //  [allWeiBo addObject:singWeiBo];
-   // return singWeiBo;
+    SingleWeiBo *singWeiBo=[[SingleWeiBo alloc]init];
+    [allWeiBo addObject:singWeiBo];
+    return singWeiBo;
 }
+
 
 
 @end
