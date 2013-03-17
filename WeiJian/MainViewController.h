@@ -11,15 +11,10 @@
 #import "SinaWeiboRequest.h"
 #import "SingleWeiBo.h"
 
-@interface MainViewController : UITableViewController<SinaWeiboDelegate,SinaWeiboRequestDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface MainViewController : UIViewController<SinaWeiboDelegate,SinaWeiboRequestDelegate,UITableViewDataSource,UITableViewDelegate>
 
 {
     NSDictionary *userInfo;
-    NSMutableArray *statuses;
-    NSString *postStatusText;
-    NSString *postImageStatusText;
-    
- 
+    NSMutableArray *timeline;
 }
-
 @end

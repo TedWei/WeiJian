@@ -9,16 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface Home_timelineViewCell : UITableViewCell
-//{
-//    UILabel *screen_nameLabel;
-//    UIImageView *photo_image;
-//    UILabel *text_Label;
-//
-//}
+
 
 @property (nonatomic,strong) UILabel *screen_nameLabel;
 @property (nonatomic,strong) UIImageView *photo_image;
-@property (nonatomic,strong) UILabel *text_Label;
+@property (nonatomic,strong) UITextView *textView;
+
 
 
 @end

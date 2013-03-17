@@ -18,8 +18,8 @@
         self.screen_nameLabel=[[UILabel alloc]initWithFrame:CGRectZero];
         [[self contentView] addSubview:self.screen_nameLabel];
         
-        self.text_Label=[[UILabel alloc]initWithFrame:CGRectZero];
-        [[self contentView] addSubview:self.text_Label];
+        self.textView=[[UITextView alloc]initWithFrame:CGRectZero];
+        [[self contentView] addSubview:self.textView];
         
         self.photo_image=[[UIImageView  alloc]initWithFrame:CGRectZero ];
         [[self contentView]addSubview:self.photo_image];
@@ -50,14 +50,14 @@
     
     float screen_nameLableWidth = 100;
     
-    CGRect photo_imageFrame= CGRectMake(inset, inset, 40, 40);
+    CGRect photo_imageFrame= CGRectMake(inset, inset, 50, 50);
     [self.photo_image  setFrame:photo_imageFrame ];
     
     CGRect screen_nameLableFrame=CGRectMake(photo_imageFrame.size.width+photo_imageFrame.origin.x+inset, inset, screen_nameLableWidth, 20);
     [self.screen_nameLabel setFrame:screen_nameLableFrame];
     
-    CGRect text_LabelFrame=CGRectMake(photo_imageFrame.size.width+photo_imageFrame.origin.x+inset,inset+screen_nameLableFrame.size.height+inset, 450, h-inset*3-screen_nameLableFrame.size.height);
-    [self.text_Label setFrame:text_LabelFrame];
+    CGRect text_ViewFrame=CGRectMake(photo_imageFrame.size.width+photo_imageFrame.origin.x+inset,inset+screen_nameLableFrame.size.height+inset, 200, h-inset*3-screen_nameLableFrame.size.height);
+    [self.textView setFrame:text_ViewFrame];
 }
 
 @end

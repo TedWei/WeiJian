@@ -17,11 +17,15 @@
 @interface MainViewController ()
 @property (nonatomic) int count;
 @property (nonatomic,strong) NSMutableArray *countArr;
+@property (nonatomic,strong) UITableView *tableView;
 
 
 @end
 
 @implementation MainViewController
+
+
+#pragma mark - SinaWeibo Delegate
 
 - (SinaWeibo *)sinaweibo
 {
@@ -49,126 +53,50 @@
 
 
 
+
+#pragma make -- load view 
+
 -(void)viewDidLoad
-
-{   
-    [super viewDidLoad];
-   // self.view.backgroundColor=[UIColor redColor];
+{
+   self.navigationItem.title=@"未绑定";
     
-    //set tableview's background ,footerView and headView
+    self.tableView=[[UITableView alloc]initWithFrame:[[UIScreen mainScreen]bounds] style:UITableViewStylePlain];
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
+    [self.view addSubview:self.tableView];
     
-//    self.tableView.backgroundColor=[UIColor clearColor];
-//    UIImageView *tableBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"myImage"]];
-//    
-//    [tableBackgroundView setFrame: self.view.frame];
-//    
-//    
-//    [self.tableView setBackgroundView:tableBackgroundView];
-//    
-//    
-//    
-//    UIView *tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-//    [tableHeaderView setBackgroundColor:[UIColor blueColor]];
-//    UIView *tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-//    [tableFooterView setBackgroundColor:[UIColor blueColor]];
-//    UILabel *headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
-//    headerLabel.text = @"Header view"; headerLabel.textColor = [UIColor whiteColor]; headerLabel.font = [UIFont boldSystemFontOfSize:22]; headerLabel.backgroundColor = [UIColor clearColor];
-//    UILabel *footerLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 320, 25)];
-//    footerLabel.text = @"Footer view"; footerLabel.textColor = [UIColor whiteColor]; footerLabel.font = [UIFont boldSystemFontOfSize:22]; footerLabel.backgroundColor = [UIColor clearColor];
-//    [tableHeaderView addSubview:headerLabel]; [tableFooterView addSubview:footerLabel];
-//    [self.tableView setTableHeaderView:tableHeaderView]; [self.tableView setTableFooterView:tableFooterView];
-//    
-//    
-//    
+    UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithTitle:@"绑定" style:UIBarButtonItemStyleBordered target:self action:@selector(login)];
+    self.navigationItem.leftBarButtonItem=leftItem;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    self.countArr = [[NSMutableArray alloc] initWithCapacity:16];
-    
-    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.tintColor = [UIColor redColor];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh"];
-    [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refresh;
-    
-    
-    
-   
-    
-    
-    
-    UIBarButtonItem *login_outItem = [[UIBarButtonItem alloc] initWithTitle:@"绑定" style:UIBarButtonItemStyleBordered target:self action:@selector(login_out)];
-    
-    self.navigationItem.leftBarButtonItem=login_outItem;
-    
-    [self resetNavItemTitleAndLeftBarButtonItemTitle];
-    
-    UIBarButtonItem *post_Item = [[UIBarButtonItem  alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(post_button_pressend) ];
-    
-    self.navigationItem.rightBarButtonItem=post_Item;
-    
-
-
-}
-
-
--(void)post_button_pressend{
-    
+    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshdata)];
+    self.navigationItem.rightBarButtonItem=rightItem;
+    [self resetNavigationItemTitle];
 }
 
 
 
--(void)login_out
+-(void)login
 {
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     NSLog(@"%@", [keyWindow subviews]);
-    
+
     
     SinaWeibo *sinaweibo = [self sinaweibo];
-    BOOL authValid = sinaweibo.isAuthValid;
-    if (authValid)
-    {
-        [sinaweibo logOut];
-        
-    }
-    else{
-        [sinaweibo logIn];
-        
-    }
-
+    [sinaweibo logIn];
+    [self resetNavigationItemTitle];
 }
 
 
--(void)resetNavItemTitleAndLeftBarButtonItemTitle
+-(void)refreshdata
 {
     SinaWeibo *sinaweibo = [self sinaweibo];
-    BOOL authValid = sinaweibo.isAuthValid;
-    self.refreshControl.enabled=authValid;
-    NSString *screen_name=[userInfo objectForKey:@"name"];
-    NSLog(@"userInfo is %@",screen_name);
-    self.navigationItem.rightBarButtonItem.enabled=authValid;
-    if (authValid)
-    {
-       
-        self.navigationItem.title=screen_name;
-
-        self.navigationItem.leftBarButtonItem.title=@"解绑";
-        
-    }
-    else{
-        self.navigationItem.title=@"未绑定";
-        self.navigationItem.leftBarButtonItem.title=@"绑定";
-        
-    }
+    [sinaweibo requestWithURL:@"statuses/home_timeline.json"
+                       params:[NSMutableDictionary dictionaryWithObject:@"20"  forKey:@"count"]
+                   httpMethod:@"GET"
+                     delegate:self];
+    [self resetNavigationItemTitle];
+    
 }
-
-
 
 -(void)getUserInfo
 {
@@ -177,150 +105,105 @@
                        params:[NSMutableDictionary dictionaryWithObject:sinaweibo.userID forKey:@"uid"]
                    httpMethod:@"GET"
                      delegate:self];
-   
 }
 
--(void)handleData
+
+-(void)resetNavigationItemTitle
 {
-    
     SinaWeibo *sinaweibo = [self sinaweibo];
-    [sinaweibo requestWithURL:@"statuses/home_timeline.json"
-                       params:[NSMutableDictionary dictionaryWithObject:@"50" forKey:@"count"]
-                   httpMethod:@"GET"
-                     delegate:self];
-    
-  //  Home_timeline *home_timeline=[[Home_timeline alloc]init];
-    
-    
-  //  [home_timeline addWeiBo];
-    
-  //  SingleWeiBo *singleWeiBo;
-    
-    NSLog(@"%@",statuses);
-    
-    
-    if (statuses.count >0) {
-        
-     
-    [self.countArr addObject:[NSString stringWithFormat:@"%@",[[statuses objectAtIndex:0] objectForKey:@"text"]]];
-        
-//       singleWeiBo.created_at=[[statuses objectAtIndex:0]objectForKey:@"created_at"];
-//    
-//        home_timeline.addWeiBo.created_at=[[statuses objectAtIndex:0]objectForKey:@"created_at"];
-//        home_timeline.addWeiBo.text=[[statuses objectAtIndex:0]objectForKey:@"text"];
-//        [self.countArr addObject:home_timeline];
-    }
-            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-    
-    
-    [self.refreshControl endRefreshing];
-    [self.tableView reloadData];
-}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-    
-
-
--(void)refreshView:(UIRefreshControl *)refresh
-{
-    if (refresh.refreshing) {
-        refresh.attributedTitle = [[NSAttributedString alloc]initWithString:@"Refreshing..."] ;
-        [self performSelector:@selector(handleData) withObject:nil afterDelay:0.5];
+    BOOL authValid = sinaweibo.isAuthValid;
+    self.navigationItem.rightBarButtonItem.enabled=authValid;
+    if (authValid) {
+        self.navigationItem.title=[userInfo objectForKey:@"screen_name"];
+        NSLog(@"userinfo is %@",userInfo);
     }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[[Home_timeline defaultHome_timeline]allWeiBo]count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"home_timelineViewCell";
-    Home_timelineViewCell *cell = (Home_timelineViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[Home_timelineViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell...
-    
-   // SingleWeiBo *singleWeiBo=[[[Home_timeline defaultHome_timeline]allWeiBo]objectAtIndex:indexPath.row];
-    
-   // cell.textLabel.text  = [self.countArr objectAtIndex:indexPath.row];
-//    cell.text_Label.text=[self.countArr objectAtIndex:(self.countArr.count-indexPath.row)];
-   
-    cell.text_Label.text=[self.countArr objectAtIndex:0];
-    
-     NSLog(@"text is %@",cell.text_Label.text);
-    cell.textLabel.font = [UIFont systemFontOfSize:17];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.refreshControl beginRefreshing];
-}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 200;
 }
 
-- (void)viewDidUnload
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewDidUnload];
+    static NSString *cellIdentifier=@"cellIdentifier";
+    
+    Home_timelineViewCell *cell=(Home_timelineViewCell *)[self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (!cell) {
+        cell=[[Home_timelineViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    NSDictionary *weibo=[timeline objectAtIndex:indexPath.row];
+    
+    cell.textView.text=[weibo objectForKey:@"text"];
+    
+    
+    
+    NSString *imageFileURL=[[weibo objectForKey:@"user"] objectForKey:@"profile_image_url"];
+    
+    NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:imageFileURL]];
+    
+    cell.photo_image.image=[UIImage imageWithData:data];
+    
+    cell.screen_nameLabel.text= [[weibo objectForKey:@"user"] objectForKey:@"screen_name"];
+    cell.textView.editable=NO;
+  //  cell.textView.text=@"1231231231231231";
+    
+    return cell;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return YES;
+    return 1;
 }
+
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+
 
 #pragma mark - SinaWeibo Delegate
-
 - (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo
 {
     NSLog(@"sinaweiboDidLogIn userID = %@ accesstoken = %@ expirationDate = %@ refresh_token = %@", sinaweibo.userID, sinaweibo.accessToken, sinaweibo.expirationDate,sinaweibo.refreshToken);
-    [self getUserInfo];
-    [self resetNavItemTitleAndLeftBarButtonItemTitle];
-    [self storeAuthData];
     
+    [self getUserInfo];
+    [self resetNavigationItemTitle];
+    [self refreshdata];
+    [self storeAuthData];
 }
-   
 
 - (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
 {
     NSLog(@"sinaweiboDidLogOut");
+    [self resetNavigationItemTitle];
+    
     [self removeAuthData];
-    [self resetNavItemTitleAndLeftBarButtonItemTitle];
-   
+    
 }
 
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
 {
     NSLog(@"sinaweiboLogInDidCancel");
-
 }
 
 - (void)sinaweibo:(SinaWeibo *)sinaweibo logInDidFailWithError:(NSError *)error
 {
     NSLog(@"sinaweibo logInDidFailWithError %@", error);
-
 }
 
 - (void)sinaweibo:(SinaWeibo *)sinaweibo accessTokenInvalidOrExpired:(NSError *)error
 {
     NSLog(@"sinaweiboAccessTokenInvalidOrExpired %@", error);
+    [self resetNavigationItemTitle];
+    
     [self removeAuthData];
-    [self resetNavItemTitleAndLeftBarButtonItemTitle];
-
+    
 }
 
 #pragma mark - SinaWeiboRequest Delegate
@@ -329,35 +212,12 @@
 {
     if ([request.url hasSuffix:@"users/show.json"])
     {
-         
+        userInfo = nil;
     }
-
     else if ([request.url hasSuffix:@"statuses/home_timeline.json"])
     {
-        
+        timeline = nil;
     }
-    else if ([request.url hasSuffix:@"statuses/update.json"])
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert"
-                                                            message:[NSString stringWithFormat:@"Post status \"%@\" failed!", postStatusText]
-                                                           delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alertView show];
-        
-        
-        NSLog(@"Post status failed with error : %@", error);
-    }
-    else if ([request.url hasSuffix:@"statuses/upload.json"])
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert"
-                                                            message:[NSString stringWithFormat:@"Post image status \"%@\" failed!", postImageStatusText]
-                                                           delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alertView show];
-       
-        
-        NSLog(@"Post image status failed with error : %@", error);
-    }
-    
-    [self resetNavItemTitleAndLeftBarButtonItemTitle];
     
 }
 
@@ -365,34 +225,17 @@
 {
     if ([request.url hasSuffix:@"users/show.json"])
     {
-        
-        userInfo = result ;
+        userInfo = result;
+        NSLog(@"result is %@",userInfo);
     }
     else if ([request.url hasSuffix:@"statuses/home_timeline.json"])
     {
-        statuses = [result objectForKey:@"statuses"] ;
+        
+        timeline = [result objectForKey:@"statuses"];
+        NSLog(@"timeline is %@",timeline);
     }
-    else if ([request.url hasSuffix:@"statuses/update.json"])
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert"
-                                                            message:[NSString stringWithFormat:@"Post status \"%@\" succeed!", [result objectForKey:@"text"]]
-                                                           delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alertView show];
-       
-        
-       
-    }
-    else if ([request.url hasSuffix:@"statuses/upload.json"])
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert"
-                                                            message:[NSString stringWithFormat:@"Post image status \"%@\" succeed!", [result objectForKey:@"text"]]
-                                                           delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alertView show];
-        
-        
-        
-    }
-   //  [self resetNavItemTitleAndLeftBarButtonItemTitle];
+    
 }
+
 
 @end
