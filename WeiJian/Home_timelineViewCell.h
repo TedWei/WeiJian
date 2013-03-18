@@ -14,6 +14,7 @@
 @property (nonatomic,strong) UILabel *screen_nameLabel;
 @property (nonatomic,strong) UIImageView *photo_image;
 @property (nonatomic,strong) UITextView *textView;
+@property (nonatomic,strong) UILabel *creat_atLabel;
 
 
 

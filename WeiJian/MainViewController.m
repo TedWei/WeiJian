@@ -15,6 +15,7 @@
 
 
 @interface MainViewController ()
+
 @property (nonatomic) int count;
 @property (nonatomic,strong) NSMutableArray *countArr;
 @property (nonatomic,strong) UITableView *tableView;
@@ -63,6 +64,11 @@
     self.tableView=[[UITableView alloc]initWithFrame:[[UIScreen mainScreen]bounds] style:UITableViewStylePlain];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
+    
+    
+    self.tableView.backgroundColor=[UIColor whiteColor];
+    
+    
     [self.view addSubview:self.tableView];
     
     UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithTitle:@"绑定" style:UIBarButtonItemStyleBordered target:self action:@selector(login)];
@@ -71,6 +77,8 @@
     UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshdata)];
     self.navigationItem.rightBarButtonItem=rightItem;
     [self resetNavigationItemTitle];
+    
+    
 }
 
 
@@ -120,6 +128,8 @@
 }
 
 
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 200;
@@ -148,6 +158,10 @@
     
     cell.screen_nameLabel.text= [[weibo objectForKey:@"user"] objectForKey:@"screen_name"];
     cell.textView.editable=NO;
+    
+    
+    cell.creat_atLabel.text=[weibo objectForKey:@"created_at"];
+    NSLog(@"created_at %@",cell.creat_atLabel.text);
   //  cell.textView.text=@"1231231231231231";
     
     return cell;
