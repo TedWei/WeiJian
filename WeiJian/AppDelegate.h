@@ -17,7 +17,7 @@
 
 #define kAppKey             @"29894543"
 #define kAppSecret          @"8cb17358d7ddc0f88ff556a4a7a5e387"
-#define kAppRedirectURI     @"http://www.weibo.com"
+#define kAppRedirectURI     @"https://api.weibo.com/oauth2/default.html"
 
 #ifndef kAppKey
 #error

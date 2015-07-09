@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 卫 强. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface WeiJianTests : SenTestCase
+@interface WeiJianTests : XCTestCase
 
 @end

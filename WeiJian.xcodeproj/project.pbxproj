@@ -11,7 +11,6 @@
 		4D35566116F0C7E3002AA388 /* Geo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35566016F0C7E3002AA388 /* Geo.m */; };
 		4D35566416F0C7FC002AA388 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35566316F0C7FC002AA388 /* User.m */; };
 		4D35566716F0C825002AA388 /* Retweeted_Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D35566616F0C825002AA388 /* Retweeted_Status.m */; };
-		4D35566A16F0DB03002AA388 /* myImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D35566916F0DB03002AA388 /* myImage.png */; };
 		4D3E660116D0D1CF00E35599 /* Home_timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660016D0D1CF00E35599 /* Home_timeline.m */; };
 		4D3E660416D0D32700E35599 /* Home_timelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E660316D0D32700E35599 /* Home_timelineViewCell.m */; };
 		4DD2F21116BF720000C3A791 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21016BF720000C3A791 /* UIKit.framework */; };
@@ -23,7 +22,6 @@
 		4DD2F22316BF720000C3A791 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2F22216BF720000C3A791 /* Default.png */; };
 		4DD2F22516BF720000C3A791 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2F22416BF720000C3A791 /* Default@2x.png */; };
 		4DD2F22716BF720000C3A791 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2F22616BF720000C3A791 /* Default-568h@2x.png */; };
-		4DD2F22F16BF720000C3A791 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F22E16BF720000C3A791 /* SenTestingKit.framework */; };
 		4DD2F23016BF720000C3A791 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21016BF720000C3A791 /* UIKit.framework */; };
 		4DD2F23116BF720000C3A791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2F21216BF720000C3A791 /* Foundation.framework */; };
 		4DD2F23916BF720100C3A791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2F23716BF720100C3A791 /* InfoPlist.strings */; };
@@ -59,7 +57,6 @@
 		4D35566316F0C7FC002AA388 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4D35566516F0C825002AA388 /* Retweeted_Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retweeted_Status.h; sourceTree = "<group>"; };
 		4D35566616F0C825002AA388 /* Retweeted_Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retweeted_Status.m; sourceTree = "<group>"; };
-		4D35566916F0DB03002AA388 /* myImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myImage.png; path = ../../WeiboNai/ScreenShots/myImage.png; sourceTree = "<group>"; };
 		4D3E65FF16D0D1CF00E35599 /* Home_timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_timeline.h; sourceTree = "<group>"; };
 		4D3E660016D0D1CF00E35599 /* Home_timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home_timeline.m; sourceTree = "<group>"; };
 		4D3E660216D0D32700E35599 /* Home_timelineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_timelineViewCell.h; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 		4DD2F22416BF720000C3A791 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4DD2F22616BF720000C3A791 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4DD2F22D16BF720000C3A791 /* WeiJianTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiJianTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DD2F22E16BF720000C3A791 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4DD2F23616BF720100C3A791 /* WeiJianTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeiJianTests-Info.plist"; sourceTree = "<group>"; };
 		4DD2F23816BF720100C3A791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4DD2F23A16BF720100C3A791 /* WeiJianTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiJianTests.h; sourceTree = "<group>"; };
@@ -120,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD2F22F16BF720000C3A791 /* SenTestingKit.framework in Frameworks */,
 				4DD2F23016BF720000C3A791 /* UIKit.framework in Frameworks */,
 				4DD2F23116BF720000C3A791 /* Foundation.framework in Frameworks */,
 			);
@@ -132,7 +127,6 @@
 		4D35566816F0DA9A002AA388 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				4D35566916F0DB03002AA388 /* myImage.png */,
 			);
 			name = Resource;
 			path = SinaWeibo;
@@ -208,7 +202,6 @@
 				4DD2F21016BF720000C3A791 /* UIKit.framework */,
 				4DD2F21216BF720000C3A791 /* Foundation.framework */,
 				4DD2F21416BF720000C3A791 /* CoreGraphics.framework */,
-				4DD2F22E16BF720000C3A791 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,7 +314,7 @@
 			name = WeiJianTests;
 			productName = WeiJianTests;
 			productReference = 4DD2F22D16BF720000C3A791 /* WeiJianTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -329,6 +322,7 @@
 		4DD2F20516BF720000C3A791 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0640;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "卫 强";
 			};
@@ -360,7 +354,6 @@
 				4DD2F22516BF720000C3A791 /* Default@2x.png in Resources */,
 				4DD2F22716BF720000C3A791 /* Default-568h@2x.png in Resources */,
 				4DD2F29A16C1042B00C3A791 /* SinaWeibo.bundle in Resources */,
-				4D35566A16F0DB03002AA388 /* myImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,13 +535,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeiJian/WeiJian-Prefix.pch";
 				INFOPLIST_FILE = "WeiJianTests/WeiJianTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -559,13 +552,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeiJian/WeiJian-Prefix.pch";
 				INFOPLIST_FILE = "WeiJianTests/WeiJianTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
